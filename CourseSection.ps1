@@ -151,6 +151,11 @@ $sectionList | Out-GridView
 
 $sectionList | Export-Clixml -Path Section.xml
 
+Push-Location D:\MasterDevOps\DevOpsCertificationTraining\
 $sectionList = Import-Clixml .\Section.xml
 $TitleList = $sectionList | Where-Object number -Match "\d+\.0"
-$current=2;code ("{0}_{1}.md" -f ($TitleList[$current].number.Split(".")[0]),$TitleList[$current].name.Replace(" ",""))
+$current=8;$TitleList[$current].number.Split(".")[0];$TitleList[$current].name.Replace(" ","")
+code ("{0}_{1}.md" -f ($TitleList[$current].number.Split(".")[0]),$TitleList[$current].name.Replace(" ",""))
+code ("{0}_{1}.ps1" -f ($TitleList[$current].number.Split(".")[0]),$TitleList[$current].name.Replace(" ",""))
+
+
